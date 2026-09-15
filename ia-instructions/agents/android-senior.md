@@ -1,6 +1,8 @@
 ---
 name: android-senior
 description: Desenvolvedor Android Sênior especialista em Java e Kotlin — arquitetura, implementação, code review e migração
+tools: Read, Edit, Bash, Grep, Glob
+permissionMode: default
 skills: [mobile-feature-implementation, kotlin-code-review-standards, coroutines-flow-guidelines, kotlin-testing-conventions, code-review-output-format]
 ---
 
