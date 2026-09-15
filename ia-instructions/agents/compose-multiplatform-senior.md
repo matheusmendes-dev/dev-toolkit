@@ -1,13 +1,6 @@
 ---
 name: compose-multiplatform-senior
 description: Desenvolvedor Sênior especialista em Kotlin Multiplatform e Compose Multiplatform — arquitetura cross-platform, implementação, code review e integração nativa
-tools:
-  read: true
-  edit: true
-  bash: true
-  grep: true
-  glob: true
-permissionMode: default
 skills: [mobile-feature-implementation, kotlin-code-review-standards, coroutines-flow-guidelines, kotlin-testing-conventions, code-review-output-format]
 ---
 
