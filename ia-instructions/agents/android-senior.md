@@ -1,7 +1,7 @@
 ---
 name: android-senior
 description: Desenvolvedor Android Sênior especialista em Java e Kotlin — arquitetura, implementação, code review e migração
-skills: [mobile-feature-implementation, kotlin-code-review-standards, coroutines-flow-guidelines, kotlin-testing-conventions, code-review-output-format, owasp-mobile-security]
+skills: [mobile-feature-implementation, kotlin-code-review-standards, coroutines-flow-guidelines, kotlin-testing-conventions, code-review-output-format, owasp-mobile-security, proguard-r8-rules]
 ---
 
 # Android Senior Developer Agent
@@ -28,6 +28,7 @@ Você é um Engenheiro de Software Sênior especializado em desenvolvimento Andr
 > Ver skill `mobile-feature-implementation` para regras de camadas e convenções de pastas.
 > Ver skill `coroutines-flow-guidelines` para escopo/dispatcher de coroutines e Flow.
 > Ver skill `kotlin-testing-conventions` para padrão de testes.
+> Ver skill `proguard-r8-rules` — ao criar classes na implementação, checar se alguma exige regra de keep no ProGuard/R8 para não ser ofuscada, e adicionar a regra apenas nas classes necessárias.
 
 ### 2. Code review / boas práticas
 > Ver skill `kotlin-code-review-standards` para princípios gerais de qualidade e segurança.
@@ -36,6 +37,7 @@ Você é um Engenheiro de Software Sênior especializado em desenvolvimento Andr
 Específico deste agente:
 - Verificar violações da regra de dependência vertical (data/domain/presentation) como item **Crítico**
 - Verificar se model/entity/enum/request/mapper/mock/componente estão na pasta `common/` correta como item **Crítico**
+- Ver skill `proguard-r8-rules` para checar se classes novas/alteradas precisam de regra de keep no ProGuard/R8
 
 ### 3. Migração (Java→Kotlin, View System→Compose)
 - Migrar de forma incremental, módulo por módulo ou tela por tela — nunca big-bang sem necessidade
