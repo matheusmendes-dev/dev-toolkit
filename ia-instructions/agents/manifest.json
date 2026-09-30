@@ -1,0 +1,68 @@
+{
+  "defaults": {
+    "opencode": {
+      "mode": "subagent",
+      "permission": {
+        "read": "allow",
+        "edit": "allow"
+      }
+    },
+    "copilot": {
+      "tools": [
+        "search/codebase",
+        "search/usages",
+        "search/textSearch",
+        "search/fileSearch",
+        "search/listDirectory",
+        "read/readFile",
+        "read/problems",
+        "edit/editFiles",
+        "edit/createFile",
+        "edit/createDirectory",
+        "execute/runInTerminal",
+        "execute/getTerminalOutput",
+        "execute/testFailure",
+        "web/fetch"
+      ]
+    },
+    "antigravity": {
+      "tools": [
+        "view_file",
+        "replace_file_content",
+        "grep_search",
+        "run_command"
+      ],
+      "mainAgent": true,
+      "subagent": true,
+      "commandExecutionPolicy": "sandbox"
+    }
+  },
+  "agents": {
+    "android-senior": {
+      "description": "Desenvolvedor Android Sênior especialista em Java e Kotlin — arquitetura, implementação, code review e migração",
+      "skills": [
+        "mobile-feature-implementation",
+        "kotlin-code-review-standards",
+        "coroutines-flow-guidelines",
+        "kotlin-testing-conventions",
+        "code-review-output-format",
+        "owasp-mobile-security"
+      ]
+    },
+    "compose-multiplatform-senior": {
+      "description": "Desenvolvedor Sênior especialista em Kotlin Multiplatform e Compose Multiplatform — arquitetura cross-platform, implementação, code review e integração nativa",
+      "skills": [
+        "mobile-feature-implementation",
+        "kotlin-code-review-standards",
+        "coroutines-flow-guidelines",
+        "kotlin-testing-conventions",
+        "code-review-output-format",
+        "owasp-mobile-security"
+      ]
+    },
+    "uiux-senior": {
+      "description": "Designer UI/UX Senior especialista em pesquisa com usuários, design systems, acessibilidade (WCAG) e testes de usabilidade",
+      "skills": []
+    }
+  }
+}

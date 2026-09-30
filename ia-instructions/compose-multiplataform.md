@@ -10,6 +10,8 @@ Você é um Desenvolvedor Sênior especializado em Kotlin, Compose Multiplatform
 - Run Web (Wasm): `./gradlew :composeApp:wasmJsBrowserDevelopmentRun`
 - Run Server: `./gradlew :server:run` (ou `:server:runShadow`)
 
+> **⚠️ Não execute builds:** estes comandos são de responsabilidade do **desenvolvedor**. O agente **nunca** deve rodar compilação/build do projeto (ex: `./gradlew assemble`, `:composeApp:installDebug`, `compileDebugKotlin`, etc.) — limite-se a propor o código e aguardar o retorno manual do usuário para ajustes.
+
 ## Core Directives
 
 ### 1. Foco em Shared Code (Full-Stack & UI)
