@@ -1,6 +1,6 @@
 ---
 name: mobile-feature-implementation
-description: Use esta skill sempre que for implementar uma nova feature ou classe em um projeto Kotlin com Clean Architecture — Android nativo ou Compose Multiplatform. Define a regra de dependência entre camadas (data/domain/presentation) e a convenção de pastas para model, entity, enum, request, mapper, mock, componentes de UI reutilizáveis e classes de foundation.
+description: Use esta skill sempre que for implementar uma nova feature ou classe em um projeto Kotlin com Clean Architecture — Android nativo ou Compose Multiplatform. Define a regra de dependência entre camadas (data/domain/presentation), UseCases e Repositories agrupados por feature e a convenção de pastas para model, entity, enum, request, mapper, mock, componentes de UI reutilizáveis e classes de foundation.
 ---
 
 # Implementação de Features — Clean Architecture (Android / Compose Multiplatform)
@@ -23,6 +23,26 @@ Nunca permita dependência **horizontal**: uma classe de `data` não pode depend
 Se duas camadas do mesmo tipo precisarem compartilhar algo, extraia para `common/` em vez de criar dependência lateral.
 
 Antes de finalizar qualquer implementação, valide se essa regra foi respeitada.
+
+## UseCases e Repositories por feature (obrigatório)
+
+Ao criar UseCases e Repositories, crie **uma classe por feature**, não uma classe por ação. A classe agrupa todos os métodos referentes àquela feature.
+
+- UseCase: `AuthUseCase` com `login()`, `logout()`, `register()`, `recoverPassword()` — e não `LoginUseCase`, `LogoutUseCase`, etc.
+- Repository: `AuthRepository` (interface no `domain`) + `AuthRepositoryImpl` (implementação no `data`), com os métodos da feature auth.
+
+Se um método novo pertence a uma feature existente, adicione-o à classe dessa feature em vez de criar uma nova.
+
+## Componentes de UI reaproveitáveis
+
+Ao criar um componente de UI, sempre que possível projete-o para ser reaproveitado em outras telas do app, em vez de acoplá-lo a uma tela específica.
+
+- Antes de criar, verifique se já existe componente equivalente em `common/ui/` e reutilize/estenda.
+- Receba dados e callbacks por parâmetro (ex: `text`, `onClick`, `modifier`) — não acesse ViewModel, repository ou estado global dentro do componente.
+- Exponha `modifier: Modifier = Modifier` e parâmetros com valores default para variações visuais.
+- Componentes reaproveitáveis ficam em `common/ui/{componentType}` (ver convenções abaixo).
+
+Só mantenha o componente dentro da `presentation` da feature quando ele for genuinamente específico daquela tela.
 
 ## Convenções de pastas em `common/` (obrigatórias)
 
